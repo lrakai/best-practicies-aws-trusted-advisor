@@ -361,6 +361,7 @@
                                 },
                                 {
                                     "Action": [
+                                        "trustedadvisor:setAccountAccess",
                                         "trustedadvisor:UpdateNotificationPreferences"
                                     ],
                                     "Resource": "*",
