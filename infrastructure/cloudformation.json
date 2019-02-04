@@ -387,7 +387,7 @@
                                             [
                                                 "arn:aws:iam::",
                                                 {
-                                                    "Ref": "AWS:AccountId"
+                                                    "Ref": "AWS::AccountId"
                                                 },
                                                 ":user/"
                                             ]
@@ -409,7 +409,7 @@
                                             [
                                                 "arn:aws:iam::",
                                                 {
-                                                    "Ref": "AWS:AccountId"
+                                                    "Ref": "AWS::AccountId"
                                                 },
                                                 ":user/${aws:username}"
                                             ]
@@ -433,7 +433,7 @@
                                                 [
                                                     "arn:aws:iam::",
                                                     {
-                                                        "Ref": "AWS:AccountId"
+                                                        "Ref": "AWS::AccountId"
                                                     },
                                                     ":mfa/${aws:username}"
                                                 ]
@@ -445,7 +445,7 @@
                                                 [
                                                     "arn:aws:iam::",
                                                     {
-                                                        "Ref": "AWS:AccountId"
+                                                        "Ref": "AWS::AccountId"
                                                     },
                                                     ":user/${aws:username}"
                                                 ]
@@ -466,7 +466,7 @@
                                                 [
                                                     "arn:aws:iam::",
                                                     {
-                                                        "Ref": "AWS:AccountId"
+                                                        "Ref": "AWS::AccountId"
                                                     },
                                                     ":mfa/${aws:username}"
                                                 ]
@@ -478,7 +478,7 @@
                                                 [
                                                     "arn:aws:iam::",
                                                     {
-                                                        "Ref": "AWS:AccountId"
+                                                        "Ref": "AWS::AccountId"
                                                     },
                                                     ":user/${aws:username}"
                                                 ]
