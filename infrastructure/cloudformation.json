@@ -387,7 +387,16 @@
                                     "Action": [
                                         "iam:ListUsers"
                                     ],
-                                    "Resource": "arn:aws:iam::AWS-ACCOUNT-ID:user/",
+                                    "Resource": {
+                                        "Fn::Sub": [
+                                            "arn:aws:iam::${AWS-ACCOUNT-ID}:user/",
+                                            {
+                                                "AWS-ACCOUNT-ID": {
+                                                    "Ref": "AWS::AccountId"
+                                                }
+                                            }
+                                        ]
+                                    },
                                     "Effect": "Allow"
                                 },
                                 {
@@ -398,7 +407,16 @@
                                         "iam:ListAccessKeys",
                                         "iam:ListServiceSpecificCredentials"
                                     ],
-                                    "Resource": "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}",
+                                    "Resource": {
+                                        "Fn::Sub": [
+                                            "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}",
+                                            {
+                                                "AWS-ACCOUNT-ID": {
+                                                    "Ref": "AWS::AccountId"
+                                                }
+                                            }
+                                        ]
+                                    },
                                     "Effect": "Allow"
                                 },
                                 {
@@ -411,8 +429,26 @@
                                         "iam:DeleteVirtualMFADevice"
                                     ],
                                     "Resource": [
-                                        "arn:aws:iam::AWS-ACCOUNT-ID:mfa/${aws:username}",
-                                        "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}"
+                                        {
+                                            "Fn::Sub": [
+                                                "arn:aws:iam::${AWS-ACCOUNT-ID}:mfa/${aws:username}",
+                                                {
+                                                    "AWS-ACCOUNT-ID": {
+                                                        "Ref": "AWS::AccountId"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Fn::Sub": [
+                                                "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}",
+                                                {
+                                                    "AWS-ACCOUNT-ID": {
+                                                        "Ref": "AWS::AccountId"
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     ]
                                 },
                                 {
@@ -422,8 +458,26 @@
                                         "iam:DeactivateMFADevice"
                                     ],
                                     "Resource": [
-                                        "arn:aws:iam::AWS-ACCOUNT-ID:mfa/${aws:username}",
-                                        "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}"
+                                        {
+                                            "Fn::Sub": [
+                                                "arn:aws:iam::${AWS-ACCOUNT-ID}:mfa/${aws:username}",
+                                                {
+                                                    "AWS-ACCOUNT-ID": {
+                                                        "Ref": "AWS::AccountId"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Fn::Sub": [
+                                                "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}",
+                                                {
+                                                    "AWS-ACCOUNT-ID": {
+                                                        "Ref": "AWS::AccountId"
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     ],
                                     "Condition": {
                                         "Bool": {
