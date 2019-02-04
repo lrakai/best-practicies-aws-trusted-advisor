@@ -348,13 +348,7 @@
                             "Statement": [
                                 {
                                     "Action": [
-                                        "trustedadvisor:DescribeCheckItems",
-                                        "trustedadvisor:DescribeCheckRefreshStatuses",
-                                        "trustedadvisor:DescribeCheckSummaries",
-                                        "trustedadvisor:DescribeNotificationPreferences",
-                                        "trustedadvisor:ExcludeCheckItems",
-                                        "trustedadvisor:IncludeCheckItems",
-                                        "trustedadvisor:RefreshCheck",
+                                        "trustedadvisor:*",
                                         "ec2:RevokeSecurityGroupIngress",
                                         "ec2:AuthorizeSecurityGroupIngress",
                                         "ec2:ModifySnapshotAttribute",
@@ -364,6 +358,13 @@
                                     ],
                                     "Resource": "*",
                                     "Effect": "Allow"
+                                },
+                                {
+                                    "Action": [
+                                        "trustedadvisor:UpdateNotificationPreferences"
+                                    ],
+                                    "Resource": "*",
+                                    "Effect": "Deny"
                                 },
                                 {
                                     "Action": [
