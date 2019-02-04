@@ -388,13 +388,15 @@
                                         "iam:ListUsers"
                                     ],
                                     "Resource": {
-                                        "Fn::Sub": [
-                                            "arn:aws:iam::${AWS-ACCOUNT-ID}:user/",
-                                            {
-                                                "AWS-ACCOUNT-ID": {
-                                                    "Ref": "AWS::AccountId"
-                                                }
-                                            }
+                                        "Fn::Join": [
+                                            "",
+                                            [
+                                                "arn:aws:iam::",
+                                                {
+                                                    "Ref": "AWS:AccountId"
+                                                },
+                                                ":user/"
+                                            ]
                                         ]
                                     },
                                     "Effect": "Allow"
@@ -408,13 +410,15 @@
                                         "iam:ListServiceSpecificCredentials"
                                     ],
                                     "Resource": {
-                                        "Fn::Sub": [
-                                            "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}",
-                                            {
-                                                "AWS-ACCOUNT-ID": {
-                                                    "Ref": "AWS::AccountId"
-                                                }
-                                            }
+                                        "Fn::Join": [
+                                            "",
+                                            [
+                                                "arn:aws:iam::",
+                                                {
+                                                    "Ref": "AWS:AccountId"
+                                                },
+                                                ":user/${aws:username}"
+                                            ]
                                         ]
                                     },
                                     "Effect": "Allow"
@@ -430,23 +434,27 @@
                                     ],
                                     "Resource": [
                                         {
-                                            "Fn::Sub": [
-                                                "arn:aws:iam::${AWS-ACCOUNT-ID}:mfa/${aws:username}",
-                                                {
-                                                    "AWS-ACCOUNT-ID": {
-                                                        "Ref": "AWS::AccountId"
-                                                    }
-                                                }
+                                            "Fn::Join": [
+                                                "",
+                                                [
+                                                    "arn:aws:iam::",
+                                                    {
+                                                        "Ref": "AWS:AccountId"
+                                                    },
+                                                    ":mfa/${aws:username}"
+                                                ]
                                             ]
                                         },
                                         {
-                                            "Fn::Sub": [
-                                                "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}",
-                                                {
-                                                    "AWS-ACCOUNT-ID": {
-                                                        "Ref": "AWS::AccountId"
-                                                    }
-                                                }
+                                            "Fn::Join": [
+                                                "",
+                                                [
+                                                    "arn:aws:iam::",
+                                                    {
+                                                        "Ref": "AWS:AccountId"
+                                                    },
+                                                    ":user/${aws:username}"
+                                                ]
                                             ]
                                         }
                                     ]
@@ -459,23 +467,27 @@
                                     ],
                                     "Resource": [
                                         {
-                                            "Fn::Sub": [
-                                                "arn:aws:iam::${AWS-ACCOUNT-ID}:mfa/${aws:username}",
-                                                {
-                                                    "AWS-ACCOUNT-ID": {
-                                                        "Ref": "AWS::AccountId"
-                                                    }
-                                                }
+                                            "Fn::Join": [
+                                                "",
+                                                [
+                                                    "arn:aws:iam::",
+                                                    {
+                                                        "Ref": "AWS:AccountId"
+                                                    },
+                                                    ":mfa/${aws:username}"
+                                                ]
                                             ]
                                         },
                                         {
-                                            "Fn::Sub": [
-                                                "arn:aws:iam::AWS-ACCOUNT-ID:user/${aws:username}",
-                                                {
-                                                    "AWS-ACCOUNT-ID": {
-                                                        "Ref": "AWS::AccountId"
-                                                    }
-                                                }
+                                            "Fn::Join": [
+                                                "",
+                                                [
+                                                    "arn:aws:iam::",
+                                                    {
+                                                        "Ref": "AWS:AccountId"
+                                                    },
+                                                    ":user/${aws:username}"
+                                                ]
                                             ]
                                         }
                                     ],
