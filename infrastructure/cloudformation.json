@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Monitor CloudTrail Events",
+    "Description": "Best Practices with Trusted Advisor",
     "Parameters": {},
     "Mappings": {
         "SubnetConfig": {
@@ -10,12 +10,6 @@
             "ProdSubnetA": {
                 "CIDR": "10.0.1.0/24",
                 "AZ": "us-west-2a"
-            }
-        },
-        "UserConfig": {
-            "Login": {
-                "Name": "student",
-                "Pass": "password"
             }
         },
         "UserConfig": {
